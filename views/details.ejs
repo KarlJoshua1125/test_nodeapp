@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Info</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+        font-size: 1rem;
+        line-height: 2.15;
+        padding-left: .75em;
+        padding-right: .75em;
+    }
+
+    .card-registration .select-arrow {
+        top: 13px;
+    }
+</style>
+
+<body>
+    <section class="h-100 bg-dark">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+
+                    <div class="card card-registration my-4">
+                        <div class="row g-0">
+                            <div class="col-xl-6 d-none d-xl-block">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                                    alt="Sample photo" class="img-fluid"
+                                    style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card-body p-md-5 text-black">
+                                    <h3 class="mb-5 text-uppercase">Personal Information</h3>
+
+                                    <form action="/details" method="post">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" name="firstname"
+                                                        class="form-control form-control-lg" />
+                                                    <label class="form-label" for="form3Example1m">First name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" name="middlename"
+                                                        class="form-control form-control-lg" />
+                                                    <label class="form-label" for="form3Example1m">Middle name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" name="lastname"
+                                                        class="form-control form-control-lg" />
+                                                    <label class="form-label" for="form3Example1n">Last name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="date" name="birthdate"
+                                                        class="form-control form-control-lg" />
+                                                    <label class="form-label" for="form3Example1n1">Birthdate</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                                            <h6 class="mb-0 me-4">Gender: </h6>
+
+                                            <div class="form-check form-check-inline mb-0 me-4">
+                                                <input class="form-check-input" type="radio" name="gender"
+                                                    value="Female" />
+                                                <label class="form-check-label" for="femaleGender">Female</label>
+                                            </div>
+
+                                            <div class="form-check form-check-inline mb-0 me-4">
+                                                <input class="form-check-input" type="radio" name="gender"
+                                                    value="Male" />
+                                                <label class="form-check-label" for="maleGender">Male</label>
+                                            </div>
+
+                                            <div class="form-check form-check-inline mb-0">
+                                                <input class="form-check-input" type="radio" name="gender"
+                                                    value="Other" />
+                                                <label class="form-check-label" for="otherGender">Other</label>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="form-outline mb-4">
+                                            <input type="text" name="address" class="form-control form-control-lg"
+                                                placeholder="Home Address" />
+
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+
+                                                <select name="region" class="form-control form-control-lg">
+                                                    <option disabled selected>Select Region</option>
+                                                    <option value="Region I">Region I</option>
+                                                    <option value="Region II">Region II</option>
+                                                    <option value="Region III">Region III</option>
+                                                    <option value="Region IV-A">Region IV-A</option>
+                                                    <option value="Region IV-B">Region IV-B</option>
+                                                    <option value="Region V">Region V</option>
+                                                    <option value="Region VI">Region VI</option>
+                                                    <option value="Region VII">Region VII</option>
+                                                    <option value="Region VIII">Region VIII</option>
+                                                </select>
+
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+
+                                                <select name="city" class="form-control form-control-lg">
+                                                    <option disabled selected>Select City</option>
+                                                    <option value="Batangas">Batangas</option>
+                                                    <option value="Manila">Manila</option>
+                                                    <option value="Quezon City">Quezon City</option>
+                                                    <option value="Makati">Makati</option>
+                                                    <option value="Davao">Davao</option>
+                                                    <option value="Cagayan De Oro">Cagayan De Oro</option>
+                                                    <option value="Cebu">Cebu</option>
+                                                    <option value="Iloilo">Iloilo</option>
+                                                    <option value="Zamboanga">Zamboanga</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+
+                                                <select name="civilstatus" class="form-control form-control-lg">
+                                                    <option disabled selected>Civil Status</option>
+                                                    <option value="Married">Married</option>
+                                                    <option value="Single">Single</option>
+                                                    <option value="Seperated">Seperated</option>
+                                                    <option value="Widowed">Widowed</option>
+                                                </select>
+
+                                            </div>
+
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" name="zipcode" maxlength="4"
+                                                        class="form-control form-control-lg" placeholder="Zipcode" />
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+
+                                        <div class="form-outline mb-4">
+                                            <h5 class="mb-0 me-4">Hobby:</h5><br>
+
+                                            <div class="form-check form-check-inline">
+
+                                                <input class="form-check-input" type="checkbox" name="hobby"
+                                                    value="Coding">
+                                                <label class="form-check-label" for="inlineRadio1">Coding</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+
+                                                <input class="form-check-input" type="checkbox" name="hobby"
+                                                    value="Reading">
+                                                <label class="form-check-label" for="inlineRadio1">Reading </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+
+                                                <input class="form-check-input" type="checkbox" name="hobby"
+                                                    value="Watching Movies">
+                                                <label class="form-check-label" for="inlineRadio1">Watching
+                                                    Movies</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+
+                                                <input class="form-check-input" type="checkbox" name="hobby"
+                                                    value="Dancing">
+                                                <label class="form-check-label" for="inlineRadio1">Dancing</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+
+                                                <input class="form-check-input" type="checkbox" name="hobby"
+                                                    value="Singing">
+                                                <label class="form-check-label" for="inlineRadio1">Singing</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+
+                                                <input class="form-check-input" type="checkbox" name="hobby"
+                                                    value="Sleeping">
+                                                <label class="form-check-label" for="inlineRadio1">Sleeping</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" name="hobby"
+                                                    value="Playing Games">
+                                                <label class="form-check-label" for="inlineRadio2">Playing Games</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" name="hobby"
+                                                    value="Others">
+                                                <label class="form-check-label" for="inlineRadio3">Others</label>
+                                            </div>
+                                        </div>
+                                        <br><br><br>
+                                        <div class="d-flex justify-content-end pt-3">
+                                            <button type="button" class="btn btn-light btn-lg">Reset all</button>
+                                            <input type="button" value="Submit">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
