@@ -5,6 +5,7 @@ const mysql = require('mysql2');
 const loginRoutes = require('./routes/login');
 const registerRoutes = require('./routes/register');
 const detailsRoutes = require('./routes/details');
+app.use('/home', require('./routes/home'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use('/register', registerRoutes);
@@ -20,6 +21,7 @@ const connection = mysql.createConnection({
   database: 'testapp'
 });
 
+
 // Connect to the MySQL database
 connection.connect((err) => {
   if (err) {
@@ -28,6 +30,25 @@ connection.connect((err) => {
   }
   console.log('Connected to the database.');
 });
+
+app.get('/home', (req, res) => {
+  // Query the database
+  const query = 'SELECT * FROM personalinfo';
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error('Error retrieving data from MySQL:', error);
+      return res.status(500).send('Internal Server Error');
+    }
+
+    console.log('Results:', results); // Check the contents of the results variable
+
+    // Render the 'home' view with the retrieved data
+    res.render('home', { results: results });
+  });
+});
+
+app.set('view engine', 'ejs');
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

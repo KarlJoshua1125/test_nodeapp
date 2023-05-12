@@ -23,22 +23,21 @@
 
 <body>
     <section class="h-100 bg-dark">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col">
+        <form action="/details" method="post">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col">
+                        <div class="card card-registration my-4">
+                            <div class="row g-0">
+                                <div class="col-xl-6 d-none d-xl-block">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                                        alt="Sample photo" class="img-fluid"
+                                        style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="card-body p-md-5 text-black">
+                                        <h3 class="mb-5 text-uppercase">Personal Information</h3>
 
-                    <div class="card card-registration my-4">
-                        <div class="row g-0">
-                            <div class="col-xl-6 d-none d-xl-block">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
-                                    alt="Sample photo" class="img-fluid"
-                                    style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="card-body p-md-5 text-black">
-                                    <h3 class="mb-5 text-uppercase">Personal Information</h3>
-
-                                    <form action="/details" method="post">
                                         <div class="row">
                                             <div class="col-md-6 mb-4">
                                                 <div class="form-outline">
@@ -171,63 +170,64 @@
 
                                                 <input class="form-check-input" type="checkbox" name="hobby"
                                                     value="Coding">
-                                                <label class="form-check-label" for="inlineRadio1">Coding</label>
+                                                <label class="form-check-label">Coding</label>
                                             </div>
                                             <div class="form-check form-check-inline">
 
                                                 <input class="form-check-input" type="checkbox" name="hobby"
                                                     value="Reading">
-                                                <label class="form-check-label" for="inlineRadio1">Reading </label>
+                                                <label class="form-check-label">Reading </label>
                                             </div>
                                             <div class="form-check form-check-inline">
 
                                                 <input class="form-check-input" type="checkbox" name="hobby"
                                                     value="Watching Movies">
-                                                <label class="form-check-label" for="inlineRadio1">Watching
+                                                <label class="form-check-label">Watching
                                                     Movies</label>
                                             </div>
                                             <div class="form-check form-check-inline">
 
                                                 <input class="form-check-input" type="checkbox" name="hobby"
                                                     value="Dancing">
-                                                <label class="form-check-label" for="inlineRadio1">Dancing</label>
+                                                <label class="form-check-label">Dancing</label>
                                             </div>
                                             <div class="form-check form-check-inline">
 
                                                 <input class="form-check-input" type="checkbox" name="hobby"
                                                     value="Singing">
-                                                <label class="form-check-label" for="inlineRadio1">Singing</label>
+                                                <label class="form-check-label">Singing</label>
                                             </div>
                                             <div class="form-check form-check-inline">
 
                                                 <input class="form-check-input" type="checkbox" name="hobby"
                                                     value="Sleeping">
-                                                <label class="form-check-label" for="inlineRadio1">Sleeping</label>
+                                                <label class="form-check-label">Sleeping</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" name="hobby"
                                                     value="Playing Games">
-                                                <label class="form-check-label" for="inlineRadio2">Playing Games</label>
+                                                <label class="form-check-label">Playing Games</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" name="hobby"
                                                     value="Others">
-                                                <label class="form-check-label" for="inlineRadio3">Others</label>
+                                                <label class="form-check-label">Others</label>
                                             </div>
                                         </div>
                                         <br><br><br>
                                         <div class="d-flex justify-content-end pt-3">
-                                            <button type="button" class="btn btn-light btn-lg">Reset all</button>
-                                            <input type="button" value="Submit">
+                                            <button type="reset" class="btn btn-light btn-lg">Reset all</button>
+                                            <input type="Submit" class="btn btn-success btn-lg" value="Submit">
                                         </div>
-                                    </form>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </section>
 </body>
 

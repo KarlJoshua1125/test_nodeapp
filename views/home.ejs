@@ -1,9 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Home</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+  <title>Data from MySQL</title>
+  <style>
+    /* Basic table styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1em 0;
+      font-size: 0.9em;
+      font-family: sans-serif;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+    table thead tr {
+      background-color: #009879;
+      color: #ffffff;
+      text-align: left;
+    }
+    table th,
+    table td {
+      padding: 12px 15px;
+    }
+    table tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+    table tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+    .action-buttons {
+      display: flex;
+      gap: 5px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Home</h1>
+  <div class="container">
+    <h1>Data from MySQL</h1>
+    <% if (results.length > 0) { %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Birth Date</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Region</th>
+            <th>City</th>
+            <th>Civil Status</th>
+            <th>Zip Code</th>
+            <th>Hobby</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% results.forEach(result => { %>
+            <tr>
+              <td><%= result.firstname %></td>
+              <td><%= result.middlename %></td>
+              <td><%= result.lastname %></td>
+              <td><%= result.birthdate %></td>
+              <td><%= result.gender %></td>
+              <td><%= result.address %></td>
+              <td><%= result.region %></td>
+              <td><%= result.city %></td>
+              <td><%= result.civilstatus %></td>
+              <td><%= result.zipcode %></td>
+              <td><%= result.hobby %></td>
+              <td class="action-buttons">
+               
+                <button class="btn btn-info btn-sm">Edit</button>
+                <button class="btn btn-danger btn-sm">Delete</button>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No data available.</p>
+    <% } %>
+  </div>
+  <!-- Add Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist
+
 </body>
 </html>

@@ -20,15 +20,33 @@ exports.getDetails = (req, res) => {
 };
 
 exports.postDetails = (req, res) => {
-    const { firstname, middlename, lastname, birthdate, gender, adsress, region, city, civilstatus, zipcode, hobby } = req.body;
+  const {
+      firstname,
+      middlename,
+      lastname,
+      birthdate,
+      gender,
+      address,
+      region,
+      city,
+      civilstatus,
+      zipcode,
+      hobby
+  } = req.body;
 
-    const con = `INSERT INTO personalinfo (firstname, middlename, lastname, birthdate, gender, address, region, city, civilstatus, zipcode, hobby) VALUES (?, ?, ?)`;
-    connection.query(con, [username, email, password], (err, result) => {
-        if (err) {
-            console.error(err);
-            res.render('details', { message: 'Error registering user' });
-        } else {
-            res.render('details', { message: 'User successfully registered' });
-        }
-    });
+  const hobbies = Array.isArray(hobby) ? hobby : [hobby]; // Ensure hobby is an array
+
+  const con = `INSERT INTO personalinfo (firstname, middlename, lastname, birthdate, gender, address, region, city, civilstatus, zipcode, hobby) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  connection.query(
+      con, [firstname, middlename, lastname, birthdate, gender, address, region, city, civilstatus, zipcode, hobbies.join(',')],
+      (err, result) => {
+          if (err) {
+              console.error(err);
+              res.render('details', { message: 'Error registering user' });
+          } else {
+              res.render('home', { message: 'User successfully registered' });
+          }
+      }
+  );
 };
+
